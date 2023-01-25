@@ -83,3 +83,29 @@
   padding: 2rem 0;
   width: 90%;
 }
+
+.overlay-transparent {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1 !important;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: 0.5s;
+  overflow-x: hidden;
+}
+
+.overlay-transparent-content {
+  position: relative;
+  top: 5%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin-top: 0px;
+}
+
+.overlay-transparent-main {
+  width: 80%;
+  margin: 40px auto;
+}

@@ -3,7 +3,7 @@
 .footerComponent {
   background-color: $neutral-color-1000;
   position: relative;
-  z-index: 1000;
+  z-index: 0;
 
   section {
     max-width: $container;

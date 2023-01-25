@@ -9,7 +9,7 @@
   max-width: $container;
   position: relative;
   width: 90%;
-  z-index: 100;
+  z-index: 1;
 
   @include tablet {
     align-items: center;

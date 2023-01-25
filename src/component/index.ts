@@ -6,6 +6,7 @@ import Hero from "./hero";
 import Instructor from "./instructor";
 import Modality from "./modality";
 import Overlay from "./overlay";
+import OverlarTransparent from "./overlay_transparent";
 import PaymentCard from "./payment_card";
 import Spinner from "./spinner";
 import Timeline from "./timeline";
@@ -19,6 +20,7 @@ export {
   Instructor,
   Modality,
   Overlay,
+  OverlarTransparent,
   PaymentCard,
   Spinner,
   Timeline,

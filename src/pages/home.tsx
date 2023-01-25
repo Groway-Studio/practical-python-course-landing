@@ -7,13 +7,16 @@ import {
   Calendar,
   Faqs,
   Instructor,
-  Overlay,
+  OverlarTransparent,
   Spinner,
   Timeline,
 } from "../component";
 import { Header, Footer } from "../component/shared";
 
 import { API } from "../api";
+
+import "../sass/component/_overlay.scss";
+
 
 export default function Home() {
   const navigate = useNavigate();
@@ -63,18 +66,21 @@ export default function Home() {
     <>
       {loading ? (
         <Spinner info={false} />
-      ) : showOverlay ? (
-        <Overlay />
       ) : (
         <>
-          <Header />
-          <Hero />
-          <Modality />
-          <Calendar />
-          <Timeline />
-          <Instructor />
-          <Faqs />
-          <Footer />
+          <div className="overlay-transparent-main">
+            <Header />
+            <Hero />
+            <Modality />
+            <Calendar />
+            <Timeline />
+            <Instructor />
+            <Faqs />
+            <Footer />
+          </div>
+
+          {showOverlay && <OverlarTransparent/>}          
+
         </>
       )}
     </>
