@@ -66,7 +66,7 @@ export default function Calendar() {
                   <span className="calendar__titles_highlights">
                     Proyecto:
                   </span>
-                  <p>Tratamiento de imagenes con Python</p>
+                  <p>Tratamiento de imágenes con Python</p>
                 </div>
               </div>
             </div>
@@ -134,7 +134,7 @@ export default function Calendar() {
             <div className="week-days">
               <div className="dayOne">
                 <div className="item-3">
-                  Introduccion a los pagos en linea
+                Introducción a los pagos en línea
                 </div>
                 <div className="item-3 highlights">
                   <span className="calendar__titles_highlights">
