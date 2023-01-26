@@ -20,6 +20,7 @@ const useUserInfo = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [response, setResponse] = useState<TopLevel>();
   const [error, setError] = useState<string | null>(null);
+  const [code, setCode] = useState<string>('');
 
   const { firstName, lastName, email, phoneNumber } = state;
 
@@ -120,6 +121,8 @@ const useUserInfo = () => {
     handleInputChange,
     handleSubmit,
     error,
+    code,
+    setCode,
   };
 };
 
