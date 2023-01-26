@@ -98,6 +98,10 @@ $desktop_xl: 1920px;
         }
       }
 
+      &:nth-child(5) {
+        grid-column: 1 / -1;
+      }
+
       &:last-child {
         grid-column: 2 / -1;
       }
