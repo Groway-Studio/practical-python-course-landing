@@ -37,7 +37,7 @@ export default function Hero( { is_code_valid, invitation_code = '', discounted_
     RedirectMP(loading, response);
     initialCode();
     // eslint-disable-next-line
-  }, [loading]);
+  }, [loading, invitation_code]);
 
   return (
     <>
@@ -157,7 +157,7 @@ export default function Hero( { is_code_valid, invitation_code = '', discounted_
             <Button type="submit">
               {
                 is_code_valid === true
-                ? `Comprar por USD ${discounted_price}.00`
+                ? `Comprar por USD ${discounted_price}`
                 : `Comprar por USD ${getCurrentPrice()}.00`
               }
               

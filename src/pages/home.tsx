@@ -18,18 +18,19 @@ import { API } from "../api";
 import "../sass/component/_overlay.scss";
 import { InvitationInfo } from "../interfaces";
 
-
 export default function Home() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(true);
   const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
   const searchParams = new URLSearchParams(window.location.search);
-  const invitationInfo: InvitationInfo = {
-    is_code_valid: true,
-    invitation_code: '3210',
-    discounted_price: 11.00
-  };
+
+  const [invitationInfo, setInvitationInfo] = useState<InvitationInfo>({
+    is_code_valid: false,
+    invitation_code: '',
+    discounted_price: 0,
+  });
+  
   useEffect(() => {
     (async () => {
       try {
@@ -42,9 +43,7 @@ export default function Home() {
             : JSON.stringify({}),
         });
 
-        console.log(response);
-
-        const data: string = await response.text();        
+        const data: string = await response.text();       
 
         if (
           data === "Invalid invitation_code" ||
@@ -55,6 +54,7 @@ export default function Home() {
         } else {
           setLoading(false);
           setShowOverlay(false);
+          setInvitationInfo(JSON.parse(data));          
         }
 
         //setLoading(false);
