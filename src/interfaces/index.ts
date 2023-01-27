@@ -114,3 +114,9 @@ export interface ReceiverAddress {
   state_name: null;
   country_name: null;
 }
+
+export interface InvitationInfo {
+  is_code_valid: boolean;
+  invitation_code: string;
+  discounted_price: number;
+}

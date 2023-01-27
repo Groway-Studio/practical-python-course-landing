@@ -11,8 +11,9 @@ import price from "./../assets/price.svg";
 import { useUserInfo } from "../hooks";
 import { RedirectMP, getCurrentPrice } from "../utils";
 import "./../sass/component/_hero.scss";
+import { InvitationInfo } from '../interfaces/index';
 
-export default function Hero() {
+export default function Hero( { is_code_valid, invitation_code = '', discounted_price }: InvitationInfo ) {
   const {
     firstName,
     lastName,
@@ -21,15 +22,22 @@ export default function Hero() {
     loading,
     response,
     error,
+    code,
+    setCode,
     handleInputChange,
     handleSubmit,
   } = useUserInfo();
 
+
+  const initialCode = () =>{
+    setCode(invitation_code);
+  }
+
   useEffect(() => {
     RedirectMP(loading, response);
-
+    initialCode();
     // eslint-disable-next-line
-  }, [loading]);
+  }, [loading, invitation_code]);
 
   return (
     <>
@@ -122,7 +130,7 @@ export default function Hero() {
                 value={email}
                 onChange={handleInputChange}
               />
-            </FormGroup>
+            </FormGroup>            
             <FormGroup>
               <Label htmlFor="prefix1">+51</Label>
               <Label htmlFor="prefix1">Teléfono</Label>
@@ -135,16 +143,24 @@ export default function Hero() {
                 onChange={handleInputChange}
               />
             </FormGroup>
-
-            <div className="offer">
-              <div>
-                <small>USD</small>
-                <span>99.00</span>
-              </div>
-            </div>
+            <FormGroup>
+              <Label htmlFor="code">Código de descuento</Label>
+              <Input
+                type="text"
+                id="code"
+                name="code"
+                value={code}
+                onChange={handleInputChange}
+              />
+            </FormGroup>      
 
             <Button type="submit">
-              Comprar por USD {getCurrentPrice()}.00
+              {
+                is_code_valid === true
+                ? `Comprar por USD ${discounted_price}`
+                : `Comprar por USD ${getCurrentPrice()}.00`
+              }
+              
             </Button>
           </Form>
         </aside>

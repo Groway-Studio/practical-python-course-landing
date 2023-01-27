@@ -16,7 +16,7 @@ import { Header, Footer } from "../component/shared";
 import { API } from "../api";
 
 import "../sass/component/_overlay.scss";
-
+import { InvitationInfo } from "../interfaces";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -25,6 +25,12 @@ export default function Home() {
 
   const searchParams = new URLSearchParams(window.location.search);
 
+  const [invitationInfo, setInvitationInfo] = useState<InvitationInfo>({
+    is_code_valid: false,
+    invitation_code: '',
+    discounted_price: 0,
+  });
+  
   useEffect(() => {
     (async () => {
       try {
@@ -37,7 +43,7 @@ export default function Home() {
             : JSON.stringify({}),
         });
 
-        const data: string = await response.text();
+        const data: string = await response.text();       
 
         if (
           data === "Invalid invitation_code" ||
@@ -48,6 +54,7 @@ export default function Home() {
         } else {
           setLoading(false);
           setShowOverlay(false);
+          setInvitationInfo(JSON.parse(data));          
         }
 
         //setLoading(false);
@@ -70,7 +77,10 @@ export default function Home() {
         <>
           <div className="overlay-transparent-main">
             <Header />
-            <Hero />
+            <Hero 
+              is_code_valid={invitationInfo.is_code_valid}
+              invitation_code={invitationInfo.invitation_code}
+              discounted_price={invitationInfo.discounted_price} />
             <Modality />
             <Calendar />
             <Timeline />
