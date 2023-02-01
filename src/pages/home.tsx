@@ -39,18 +39,18 @@ export default function Home() {
 
         const data: string = await response.text();
 
-        if (
-          data === "Invalid invitation_code" ||
-          data === "No invitation_code"
-        ) {
-          setShowOverlay(true);
-          setLoading(false);
-        } else {
-          setLoading(false);
-          setShowOverlay(false);
-        }
+//         if (
+//           data === "Invalid invitation_code" ||
+//           data === "No invitation_code"
+//         ) {
+//           setShowOverlay(true);
+//           setLoading(false);
+//         } else {
+//           setLoading(false);
+//           setShowOverlay(false);
+//         }
 
-        //setLoading(false);
+        setLoading(false);
       } catch (error: any) {
         setLoading(false);
         navigate("/server-error");
