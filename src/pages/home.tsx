@@ -21,7 +21,7 @@ import "../sass/component/_overlay.scss";
 export default function Home() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(true);
-  const [showOverlay, setShowOverlay] = useState<boolean>(false);
+//  const [showOverlay, setShowOverlay] = useState<boolean>(false);
 
   const searchParams = new URLSearchParams(window.location.search);
 
@@ -37,8 +37,7 @@ export default function Home() {
             : JSON.stringify({}),
         });
 
-        const data: string = await response.text();
-
+//        const data: string = await response.text();
 //         if (
 //           data === "Invalid invitation_code" ||
 //           data === "No invitation_code"
