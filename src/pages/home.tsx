@@ -76,9 +76,7 @@ export default function Home() {
             <Instructor />
             <Faqs />
             <Footer />
-          </div>
-
-          {showOverlay && <OverlarTransparent/>}          
+          </div>        
 
         </>
       )}
