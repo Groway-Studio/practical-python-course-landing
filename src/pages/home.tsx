@@ -7,7 +7,7 @@ import {
   Calendar,
   Faqs,
   Instructor,
-  OverlarTransparent,
+  // OverlarTransparent,
   Spinner,
   Timeline,
 } from "../component";
@@ -28,7 +28,8 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch(`${API}/invitation_code.py`, {
+        // const response = await fetch(`${API}/invitation_code.py`, {
+        await fetch(`${API}/invitation_code.py`, {
           method: "POST",
           body: searchParams.get("invitation_code")
             ? JSON.stringify({
