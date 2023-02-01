@@ -122,7 +122,7 @@ export const timeline: Timeline[] = [
       "Primera venta pública abierta a todo público con un descuento por pronta compra.",
     price: "49 USD",
     until: "10 de Febrero",
-    ribbon: false,
+    ribbon: true,
     disabled: earlyBirdVerification(),
     discount: 51,
   },
