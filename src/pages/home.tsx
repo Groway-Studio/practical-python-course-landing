@@ -53,7 +53,6 @@ export default function Home() {
       } catch (error: any) {
         setLoading(false);
         navigate("/server-error");
-
         throw new Error(error);
       }
     })();
@@ -77,6 +76,8 @@ export default function Home() {
             <Faqs />
             <Footer />
           </div>        
+
+        {/* {showOverlay && <OverlarTransparent/>} */}
 
         </>
       )}

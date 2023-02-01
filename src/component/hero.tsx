@@ -91,7 +91,7 @@ export default function Hero() {
         <aside className="formInfo-hero">
           {/* <div className="formInfo-hero__ribbon">33% OFF</div> */}
           <h2>
-            Private <span>Sale!</span>
+            Early Bird <span>Sale!</span>
           </h2>
           <Form id="checkoutForm" onSubmit={handleSubmit}>
             <FormGroup>
