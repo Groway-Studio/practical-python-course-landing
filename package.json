@@ -1,6 +1,6 @@
 {
   "name": "landing-courses",
-  "homepage": "https://aprendepython.groway.studio",
+  "homepage": "https://groway-studio.github.io/practical-python-course-landing/",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
